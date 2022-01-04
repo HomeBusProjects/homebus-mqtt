@@ -1,0 +1,2 @@
+class BrokerAccount < ApplicationRecord
+end

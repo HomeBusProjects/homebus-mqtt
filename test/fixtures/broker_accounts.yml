@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  password: MyString
+  enc_password: MyString
+  superuser: false
+  enabled: false
+
+two:
+  password: MyString
+  enc_password: MyString
+  superuser: false
+  enabled: false

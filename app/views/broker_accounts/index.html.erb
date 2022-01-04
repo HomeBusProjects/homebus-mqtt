@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Broker accounts</h1>
+
+<div id="broker_accounts">
+  <% @broker_accounts.each do |broker_account| %>
+    <%= render broker_account %>
+    <p>
+      <%= link_to "Show this broker account", broker_account %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New broker account", new_broker_account_path %>

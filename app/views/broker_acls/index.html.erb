@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Broker acls</h1>
+
+<div id="broker_acls">
+  <% @broker_acls.each do |broker_acl| %>
+    <%= render broker_acl %>
+    <p>
+      <%= link_to "Show this broker acl", broker_acl %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New broker acl", new_broker_acl_path %>

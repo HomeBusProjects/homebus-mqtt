@@ -1,0 +1,2 @@
+class BrokerAcl < ApplicationRecord
+end

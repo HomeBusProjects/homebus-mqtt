@@ -1,0 +1,35 @@
+version: '3.1'
+services:
+  postgres:
+    image: postgres:12.4
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: homebus-mqtt-development
+    networks: 
+      - homebus-net
+    restart: "no"
+
+  web:
+    depends_on:
+      - 'postgres'
+    build: .
+    command: ["bin/rails","server","-b","0.0.0.0","-p","3000"]
+    ports:
+      - "127.0.0.1:3000:3000"
+    links:
+      - postgres
+    volumes:
+      - .:/app
+    environment:
+      DOCKER: docker
+      RAILS_ENV: development
+      RAILS_DOCKER: 1
+    env_file: .env.docker
+    networks: 
+      - homebus-net 
+    restart: "no"
+
+networks:
+  homebus-net:

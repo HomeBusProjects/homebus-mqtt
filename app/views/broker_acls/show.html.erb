@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @broker_acl %>
+
+<div>
+  <%= link_to "Edit this broker acl", edit_broker_acl_path(@broker_acl) %> |
+  <%= link_to "Back to broker acls", broker_acls_path %>
+
+  <%= button_to "Destroy this broker acl", @broker_acl, method: :delete %>
+</div>

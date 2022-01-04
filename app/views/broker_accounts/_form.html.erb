@@ -1,0 +1,37 @@
+<%= form_with(model: broker_account) do |form| %>
+  <% if broker_account.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(broker_account.errors.count, "error") %> prohibited this broker_account from being saved:</h2>
+
+      <ul>
+        <% broker_account.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :password, style: "display: block" %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div>
+    <%= form.label :enc_password, style: "display: block" %>
+    <%= form.text_field :enc_password %>
+  </div>
+
+  <div>
+    <%= form.label :superuser, style: "display: block" %>
+    <%= form.check_box :superuser %>
+  </div>
+
+  <div>
+    <%= form.label :enabled, style: "display: block" %>
+    <%= form.check_box :enabled %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
